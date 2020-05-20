@@ -251,7 +251,7 @@ namespace Harvest.Net
                 Body = body
             };
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return request;
         }

@@ -138,7 +138,7 @@ namespace Harvest.Net
         {
             var request = Request("people", RestSharp.Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<User>(request);
         }
@@ -151,7 +151,7 @@ namespace Harvest.Net
         {
             var request = Request("people", RestSharp.Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<User>(request);
         }
@@ -287,7 +287,7 @@ namespace Harvest.Net
         {
             var request = Request("people/" + userId, RestSharp.Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<User>(request);
         }
@@ -301,7 +301,7 @@ namespace Harvest.Net
         {
             var request = Request("people/" + userId, RestSharp.Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<User>(request);
         }

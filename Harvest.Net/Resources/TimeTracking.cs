@@ -282,7 +282,7 @@ namespace Harvest.Net
             if (ofUser != null)
                 request.AddParameter("of_user", ofUser.Value);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<Timer>(request);
         }
@@ -300,7 +300,7 @@ namespace Harvest.Net
             if (ofUser != null)
                 request.AddParameter("of_user", ofUser.Value);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<Timer>(request);
         }
@@ -381,7 +381,7 @@ namespace Harvest.Net
         {
             var request = Request(ofUser != null ? $"daily/add?of_user={ofUser}" : "daily/add", Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return request;
         }

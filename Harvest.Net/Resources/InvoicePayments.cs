@@ -104,8 +104,7 @@ namespace Harvest.Net
         public Payment CreatePayment(long invoiceId, PaymentOptions options)
         {
             var request = Request("invoices/" + invoiceId + "/payments", RestSharp.Method.POST);
-
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<Payment>(request);
         }
@@ -119,7 +118,7 @@ namespace Harvest.Net
         {
             var request = Request("invoices/" + invoiceId + "/payments", RestSharp.Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<Payment>(request);
         }

@@ -155,7 +155,7 @@ namespace Harvest.Net
         {
             var request = Request("projects/" + projectId + "/user_assignments/" + userAssignmentId, Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<UserAssignment>(request);
         }
@@ -170,7 +170,7 @@ namespace Harvest.Net
         {
             var request = Request("projects/" + projectId + "/user_assignments/" + userAssignmentId, Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<UserAssignment>(request);
         }
@@ -189,7 +189,7 @@ namespace Harvest.Net
         {
             var request = Request("projects/" + projectId + "/user_assignments", Method.POST);
 
-            request.AddBody(new UserAssignmentCreateOptions()
+            request.AddXmlBody(new UserAssignmentCreateOptions()
             {
                 Id = userId
             });

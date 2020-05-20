@@ -152,14 +152,14 @@ namespace Harvest.Net
         public virtual async Task<T> ExecuteAsync<T>(IRestRequest request)
             where T : new()
         {
-            var response = await _client.ExecuteTaskAsync<T>(request).ConfigureAwait(false);
+            var response = await _client.ExecuteAsync<T>(request).ConfigureAwait(false);
 
             response.ThrowIfBadRequest();
 
             if (ShouldRequestLocationData(request, response))
             {
                 var loadRequest = GetLocationHeaderRequest(request, response);
-                response = await _client.ExecuteTaskAsync<T>(loadRequest).ConfigureAwait(false);
+                response = await _client.ExecuteAsync<T>(loadRequest).ConfigureAwait(false);
             }
 
             return response.Data;
@@ -180,7 +180,7 @@ namespace Harvest.Net
         /// <param name="request">The request to send</param>
         public virtual Task<IRestResponse> ExecuteAsync(IRestRequest request)
         {
-            return _client.ExecuteTaskAsync(request);
+            return _client.ExecuteAsync(request);
         }
 
         /// <summary>

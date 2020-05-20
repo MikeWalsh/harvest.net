@@ -97,7 +97,7 @@ namespace Harvest.Net
         {
             var request = Request("tasks", Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<Models.Task>(request);
         }
@@ -110,7 +110,7 @@ namespace Harvest.Net
         {
             var request = Request("tasks", Method.POST);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<Models.Task>(request);
         }
@@ -202,7 +202,7 @@ namespace Harvest.Net
         {
             var request = Request("tasks/" + taskId, Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return Execute<Models.Task>(request);
         }
@@ -216,7 +216,7 @@ namespace Harvest.Net
         {
             var request = Request("tasks/" + taskId, Method.PUT);
 
-            request.AddBody(options);
+            request.AddXmlBody(options);
 
             return ExecuteAsync<Models.Task>(request);
         }

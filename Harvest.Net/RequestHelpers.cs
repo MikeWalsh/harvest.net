@@ -39,19 +39,19 @@ namespace Harvest.Net
         private IRestRequest CreateRequest<TOptions>(string resource, TOptions options)
             where TOptions : class, new()
         {
-            return Request(resource, Method.POST).AddBody(options);
+            return Request(resource, Method.POST).AddXmlBody(options);
         }
 
         private IRestRequest CreateRequest<TOptions>(string resource, long resourceId, string subresource, TOptions options)
             where TOptions : class, new()
         {
-            return Request(resource, resourceId, subresource, Method.POST).AddBody(options);
+            return Request(resource, resourceId, subresource, Method.POST).AddXmlBody(options);
         }
 
         private IRestRequest UpdateRequest<TOptions>(string resource, long resourceId, TOptions options)
             where TOptions : class, new()
         {
-            return Request(resource, resourceId, Method.PUT).AddBody(options);
+            return Request(resource, resourceId, Method.PUT).AddXmlBody(options);
         }
     }
 }

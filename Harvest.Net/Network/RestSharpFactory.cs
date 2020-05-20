@@ -38,8 +38,8 @@ namespace Harvest.Net.Network
 
             // Harvest API is inconsistent in JSON responses so we'll stick to XML
             client.ClearHandlers();
-            client.AddHandler("application/xml", new HarvestXmlDeserializer());
-            client.AddHandler("text/xml", new HarvestXmlDeserializer());
+            client.AddHandler("application/xml", () => new HarvestXmlDeserializer());
+            client.AddHandler("text/xml", () => new HarvestXmlDeserializer());
 
             return client;
         }
